@@ -64,11 +64,6 @@ function playRound(humanChoice, computerChoice) {
     } 
 }
 
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
-
-
-
 function playGame() {
     humanScore = 0
     computerScore = 0
@@ -77,8 +72,9 @@ function playGame() {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
+        console.log(`human: ${humanScore}`, `computer: ${computerScore}`);
     }
-    console.log(`human: ${humanScore}`, `computer: ${computerScore}`)
+    console.log(`Game Over - human: ${humanScore}`, `computer: ${computerScore}`)
 }
 
 playGame()
