@@ -22,20 +22,26 @@ computerScore = 0
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock") {
         if (computerChoice === "paper") {
+            computerScore++
             return console.log(`you lose. ${computerChoice} beats ${humanChoice}`)
         } else {
+            humanScore++
             return console.log(`you win. ${humanChoice} beats ${computerChoice}`)
         } 
     } else if (humanChoice === "scissors") {
         if (computerChoice === "rock") {
+            computerScore++
             return console.log(`you lose. ${computerChoice} beats ${humanChoice}`)
         } else {
+            humanScore++
             return console.log(`you win. ${humanChoice} beats ${computerChoice}`)
         }
     } else if (humanChoice === "paper") {
         if (computerChoice === "scissors") {
+            computerScore++
             return console.log(`you lose. ${computerChoice} beats ${humanChoice}`)
         } else {
+            humanScore++
             return console.log(`you win. ${humanChoice} beats ${computerChoice}`)
         }
     } else {
