@@ -64,12 +64,11 @@ function playRound(humanChoice, computerChoice) {
     } 
 }
 
-function playGame() {
+function playGame(humanSelection) {
     humanScore = 0
     computerScore = 0
 
-    while (humanScore + computerScore < 5) {
-        const humanSelection = getHumanChoice();
+    while (humanScore + computerScore < 1) {
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
         console.log(`human: ${humanScore}`, `computer: ${computerScore}`);
@@ -78,3 +77,50 @@ function playGame() {
 }
 
 playGame()
+
+
+
+
+
+var btnScissors = document.createElement("button");
+var btnRock = document.createElement("button");
+var btnPaper = document.createElement("button");
+
+btnScissors.className = "scissors";
+btnRock.className = "rock";
+btnPaper.className = "paper";
+
+const body = document.querySelector("body");
+const newDiv = document.createElement("div");
+
+const newTitle = document.createElement("h1");
+body.appendChild(newTitle);
+newTitle.textContent = "Rock, Paper, or Scissors?";
+newTitle.style.textAlign = "center";
+
+body.appendChild(newDiv);
+
+newDiv.appendChild(btnPaper);
+newDiv.appendChild(btnScissors);
+newDiv.appendChild(btnRock);
+
+btnPaper.setAttribute("style", "color: white; background-color: black;")
+btnPaper.textContent = "Choose Paper";
+
+btnScissors.setAttribute("style", "color: white; background-color: black;")
+btnScissors.textContent = "Choose Scissors";
+
+btnRock.setAttribute("style", "color: white; background-color: black;")
+btnRock.textContent = "Choose Rock";
+
+newDiv.style.display = "flex";
+newDiv.style.gap = "20px";
+newDiv.style.justifyContent = "center";
+
+const btnRockSelect = document.querySelector(".rock");
+const btnScissorsSelect = document.querySelector(".scissors");
+const btnPaperSelect = document.querySelector(".paper");
+
+btnScissorsSelect.addEventListener("click", playGame("scissors"));
+btnRockSelect.addEventListener("click", playGame("rock"));
+btnPaperSelect.addEventListener("click", playGame("paper"));
